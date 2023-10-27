@@ -21,6 +21,7 @@ classes = {"Amenity": Amenity, "City": City,
 
 
 class DBStorage:
+
     """interaacts with the MySQL database"""
     __engine = None
     __session = None
@@ -54,6 +55,17 @@ class DBStorage:
     def new(self, obj):
         """add the object to the current database session"""
         self.__session.add(obj)
+
+        def get(self, cls, id):
+        """retrieves an obclass with id"""
+        obj = None
+        if cls is not None and issubclass(cls, BaseModel):
+            obj = self.__session.query(cls).filter(cls.id == id).first()
+        return obj
+
+    def count(self, cls=None):
+        """retrif objects of a classls==None)"""
+        return len(self.all(cls))
 
     def save(self):
         """commit all changes of the current database session"""
