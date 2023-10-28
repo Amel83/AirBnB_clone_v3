@@ -11,7 +11,7 @@ from models import storage
 def api_status():
     '''Gets the status of the API.
     '''
-    response = {'status': 'ok'}
+    response = {'status': 'OK'}
     return jsonify(response)
 
 
@@ -19,7 +19,7 @@ def api_status():
 def get_stats():
     '''Gets the number of objects for each type.
     '''
-    objects = {
+    stats = {
         'amenities': storage.count{'Amenity'},
         'cities': storage.count{'City'},
         'places': storage.count{'Place'},
@@ -27,4 +27,4 @@ def get_stats():
         'states': storage.count{'State'},
         'users': storage.count{'User'}
     }
-    return jsonify(objects)
+    return jsonify(stats)
