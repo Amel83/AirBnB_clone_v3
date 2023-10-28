@@ -59,10 +59,11 @@ class DBStorage:
     def get(self, cls, id):
         """retrieves an obclass with id"""
         if cls in classes.values() and id and type(id) == str:
-        d_obj = self.all(cls)
-        for key, value in d_obj.item():
-            if key.split(".")[1] == id:
-                return value
+            d_obj = self.all(cls)
+            for key, value in d_obj.item():
+                if key.split(".")[1] == id:
+                    return value
+        return None
 
     def count(self, cls=None):
         """retrif objects of a classls==None)"""

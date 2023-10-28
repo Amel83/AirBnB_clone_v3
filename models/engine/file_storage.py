@@ -99,7 +99,7 @@ class FileStorage:
         return None
     def count(self, cls=None):
         """this will pass too"""
-        all.class = classes.values():
+        all_class = classes.values()
         if not cls:
             count = 0
             for clas in all_class:
