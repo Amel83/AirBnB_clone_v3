@@ -56,16 +56,20 @@ class DBStorage:
         """add the object to the current database session"""
         self.__session.add(obj)
 
-        def get(self, cls, id):
+    def get(self, cls, id):
         """retrieves an obclass with id"""
-        obj = None
-        if cls is not None and issubclass(cls, BaseModel):
-            obj = self.__session.query(cls).filter(cls.id == id).first()
-        return obj
+        if cls in classes.values() and id and type(id) == str:
+        d_obj = self.all(cls)
+        for key, value in d_obj.item():
+            if key.split(".")[1] == id:
+                return value
 
     def count(self, cls=None):
         """retrif objects of a classls==None)"""
-        return len(self.all(cls))
+        data = self.all(cls)
+        if cls in classes.values():
+            data = self.all(cls)
+        return len(data)
 
     def save(self):
         """commit all changes of the current database session"""
