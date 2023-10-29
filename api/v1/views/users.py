@@ -41,7 +41,8 @@ def delete_user(user_id):
 def create_user():
     """give new user object"""
     if not request.get_json():
-        abort(400, 'Not a JSON')data = request.get_json()
+        abort(400, 'Not a JSON')
+    data = request.get_json()
     if 'email' not in data:
         abort(400, 'Missing email')
     if 'password' not in data:
