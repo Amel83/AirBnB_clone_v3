@@ -1,5 +1,5 @@
 #l/usr/bin/python3
-'zzcgggreates a Blueprint instance with `url_prefix` set to `/api/v1`.
+'''zzcgggreates a Blueprint instance with `url_prefix` set to `/api/v1`.
 '''
 
 
