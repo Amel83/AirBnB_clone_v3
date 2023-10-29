@@ -1,4 +1,6 @@
-PI for Place objects, supporting RESTful operations.
+#!/usr/bin/python3
+'''
+API for Place objects, supporting RESTful operations.
 '''
 
 from flask import abort, jsonify, request
