@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 '''is this thing so tedious hmmm perfect choice for me though
 '''
 
